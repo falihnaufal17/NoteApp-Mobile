@@ -1,9 +1,38 @@
 import React, { Component } from 'react'
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import { List, ListItem, Left, Icon, } from 'native-base';
+import axios from 'axios'
+import url from '../../Api'
 
 export class Drawer extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            categories: []
+        }
+    }
+
+    getCategories() {
+        axios.get(`${url}/categories`)
+            .then((res) => {
+                console.warn('Response: ', res.data.result)
+                this.setState({
+                    categories: res.data.result
+                })
+            })
+            .catch((error) => {
+                alert('oops something Wrong!')
+            })
+    }
+
+    componentDidMount = async () => {
+        await this.getCategories()
+    }
+
     render() {
+        let { categories } = this.state
+        console.warn(categories)
         return (
             <View style={styles.container}>
                 <Image source={require('../assets/w644.png')} style={styles.avatar} />
@@ -12,12 +41,28 @@ export class Drawer extends Component {
                 </View>
                 <View style={{ marginTop: 40 }}>
                     <List>
+                        {
+                            categories.map((item, key) => {
+                                return (
+                                    <TouchableOpacity
+                                        onPress={() => this.props.navigation.navigate('Home')}
+                                    >
+                                        <ListItem>
+                                            <Left>
+                                                <Text style={styles.txtMenu}>{item.name}</Text>
+                                            </Left>
+                                        </ListItem>
+                                    </TouchableOpacity>
+                                )
+                            })
+                        }
                         <TouchableOpacity
                             onPress={() => this.props.navigation.navigate('Home')}
                         >
                             <ListItem>
                                 <Left>
-                                    <Text style={styles.txtMenu}><Icon name="map" type="Ionicons" style={styles.iconStyle} /> Map</Text>
+                                    <Icon name="add" type='Ionicons' />
+                                    <Text style={styles.txtMenu}>Add Category</Text>
                                 </Left>
                             </ListItem>
                         </TouchableOpacity>
