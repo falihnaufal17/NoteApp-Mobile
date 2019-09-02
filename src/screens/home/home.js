@@ -3,7 +3,7 @@ import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'
 import AppBar from '../../components/header'
 import axios from 'axios'
 import { FlatGrid } from 'react-native-super-grid';
-import { Card, CardItem, Title, Subtitle, Fab, Icon, Button } from 'native-base'
+import { Card, CardItem, Title, Subtitle, Fab, Icon, Button, Content, Input, Item } from 'native-base'
 import url from '../../../Api'
 import MarqueeText from 'react-native-marquee';
 import moment from 'moment';
@@ -46,7 +46,7 @@ export class Home extends Component {
 
     _renderItem = ({ item }) => {
         return (
-            <TouchableOpacity activeOpacity={0.9}>
+            <TouchableOpacity activeOpacity={0.9} onPress={() => this.props.navigation.navigate('EditNote', { data: item })}>
                 <Card style={{ height: 180, backgroundColor: `${item.color}`, borderRadius: 10 }}>
                     <CardItem style={{ backgroundColor: `${item.color}` }}>
                         <Text style={{ color: '#ffffff', textAlign: 'right', marginLeft: 'auto' }}>{moment(item.updated_at).format('DD MMM')}</Text>
@@ -77,6 +77,11 @@ export class Home extends Component {
         return (
             <>
                 <AppBar />
+                <View style={{ marginHorizontal: 20 }}>
+                    <Item rounded style={{ elevation: 2, marginTop: 20 }}>
+                        <Input placeholder='Search...' placeholderTextColor='#c4c4c4' style={{ marginHorizontal: 10 }} />
+                    </Item>
+                </View>
                 <View style={styles.root}>
                     <FlatGrid
                         itemDimension={130}

@@ -2,6 +2,7 @@ import { createDrawerNavigator, createAppContainer, createStackNavigator } from 
 import Home from '../screens/home/home';
 import Drawer from '../components/drawer'
 import AddNote from '../screens/note/add';
+import EditNote from '../screens/note/edit';
 
 const stackNavigation = createStackNavigator({
     Home: {
@@ -9,6 +10,9 @@ const stackNavigation = createStackNavigator({
     },
     AddNote: {
         screen: AddNote,
+    },
+    EditNote: {
+        screen: EditNote
     }
 },
     {
