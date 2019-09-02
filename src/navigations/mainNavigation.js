@@ -1,10 +1,14 @@
 import { createDrawerNavigator, createAppContainer, createStackNavigator } from 'react-navigation'
 import Home from '../screens/home/home';
 import Drawer from '../components/drawer'
+import AddNote from '../screens/note/add';
 
 const stackNavigation = createStackNavigator({
     Home: {
         screen: Home,
+    },
+    AddNote: {
+        screen: AddNote,
     }
 },
     {

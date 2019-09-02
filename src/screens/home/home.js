@@ -34,6 +34,16 @@ export class Home extends Component {
             })
     }
 
+    cutText = (text) => {
+        if (text.length > 30) {
+            let textSplit = text.substr(0, 20);
+            return `${textSplit} ...`;
+        } else {
+            let textSplit = text;
+            return `${textSplit}`;
+        }
+    }
+
     _renderItem = ({ item }) => {
         return (
             <TouchableOpacity activeOpacity={0.9}>
@@ -54,7 +64,7 @@ export class Home extends Component {
                         </MarqueeText>
                     </CardItem>
                     <CardItem style={{ backgroundColor: `${item.color}` }}>
-                        <Subtitle style={{ color: '#ffffff', textAlign: 'left' }}>{item.description}</Subtitle>
+                        <Subtitle style={{ color: '#ffffff', textAlign: 'left' }}>{this.cutText(item.description)}</Subtitle>
                     </CardItem>
                 </Card>
             </TouchableOpacity>
@@ -79,6 +89,7 @@ export class Home extends Component {
 
                     <Fab
                         direction="up"
+                        onPress={() => this.props.navigation.navigate('AddNote')}
                         containerStyle={{}}
                         style={{ backgroundColor: '#5067FF' }}
                         position="bottomRight">
