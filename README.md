@@ -1,6 +1,6 @@
 <h1 align="center">Note App</h1>
 <p align="center">
-  <img width="250" src="./src/assets/logo/logo.png"/>
+  <img width="250" src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//87/MTA-1252049/tesla-amazing_magnetic-sticky-notes-tesla-amazing-transparan---size-l-200-x-100mm_full10.jpg"/>
 </p>
 <p align="center">
   Built with React Native.
@@ -41,11 +41,9 @@
 
 ## Screenshots
 <div align="center">
-    <img width="250" src="./src/assets/Screenshot_2019-08-30-18-22-14-601_com.applibrary.png">    
-    <img width="250" src="./src/assets/Screenshot_2019-08-30-18-22-52-889_com.applibrary.png">
-    <img width="250" src="./src/assets/Screenshot_2019-08-30-18-23-49-105_com.applibrary.png">
-    <img width="250" src="./src/assets/Screenshot_2019-08-30-18-23-36-473_com.applibrary.png">
-    <img width="250" src="./src/assets/Screenshot_2019-08-30-18-24-41-195_com.applibrary.png">
+    <img width="250" src="./src/assets/WhatsApp Image 2019-09-02 at 21.07.28 (3).jpeg">    
+    <img width="250" src="./src/assets/WhatsApp Image 2019-09-02 at 21.07.28 (1).jpeg">
+    <img width="250" src="./src/assets/WhatsApp Image 2019-09-02 at 21.07.28.jpeg">
 </div>
 
 ## Release APK
@@ -61,7 +59,7 @@
   <table>
     <tr>
       <td align="center">
-        <a href="https://github.com/andreferi3">
+        <a href="https://github.com/falihnaufal17">
           <img width="100" src="https://avatars3.githubusercontent.com/u/35053882?s=460&v=4" alt="Falih Naufal"><br/>
           <sub><b>Falih Naufal</b></sub>
         </a>
